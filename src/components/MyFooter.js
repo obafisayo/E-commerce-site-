@@ -6,7 +6,7 @@ import { FaArrowUp } from 'react-icons/fa';
 
 const MyFooter = () => {
   return (
-    <div className='flex flex-col gap-4 mt-16 mb-16'>
+    <div className='container flex flex-col gap-4 mt-16 mb-16'>
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-x-28 justify-center mt-10">
         <div className='flex flex-col gap-1 items-center'>
           <div className='w-20 h-20 border-8 rounded-full flex items-center justify-center'> 

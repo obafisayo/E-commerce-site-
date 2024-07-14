@@ -3,7 +3,7 @@ import { FaTelegram } from 'react-icons/fa';
 
 const FooterLast = () => {
   return (
-    <div className='flex flex-col md:flex-row flex-wrap gap-8 mt-8 bg-black text-white pb-10 pt-10 justify-center'>
+    <div className='container flex flex-col md:flex-row flex-wrap gap-8 mt-8 bg-black text-white pb-10 pt-10 justify-center'>
       <div className='flex flex-col gap-3 w-full md:w-auto'>
         <h2 className='font-semibold'>EXCLUSIVE</h2>
         <h3>Subscribe</h3>

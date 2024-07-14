@@ -1,14 +1,14 @@
 import React from 'react'
-import Herosection from './herosection/Herosection'
+import Herosection from './herosection/Herosection';
+import NextHero from '../../../components/NextHero/NextHero';
 
 const Home = () => {
   return (
     <main>
-      <div className="container">
+      <div className="container"> 
         <Herosection />
-        <div className="bg-fuchsia-400 h-[400px] flex items-center
-          text-center text-white font-semibold">
-          <h1 className="text-xl">This is the Home page</h1>
+        <div className="bg-black h-[400px] text-white font-semibold">
+          <NextHero />
         </div>
       </div>
     </main>
