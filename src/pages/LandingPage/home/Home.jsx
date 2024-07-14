@@ -6,23 +6,21 @@ import ProductSection3 from './productsection1/productsection3'
 import Categories from './categories/Categories'
 import NextHero from '../../../components/NextHero/NextHero';
 import Featured from '../../../components/Featured/Featured'
+import Services from './services/Services'
 
 const Home = () => {
   return(
     <main>
-    <div>
-        <Herosection />
-        <ProductSection1 />
-        <Categories />
-        <ProductSection2 />
-        <div className='container'>
-        <NextHero />
-        </div>
-        <ProductSection3 />
-        <Featured />
-      </div>
+      <Herosection />
+      <ProductSection1 />
+      <Categories />
+      <ProductSection2 />
+      <NextHero />
+      <ProductSection3 />
+      <Featured />
+      <Services />
     </main>
-    )
+  )
 }
 
 export default Home
