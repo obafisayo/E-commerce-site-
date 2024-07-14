@@ -14,7 +14,10 @@ const Home = () => {
         <ProductSection1 />
         <Categories />
         <ProductSection2 />
+        <div className='container'>
         <NextHero />
+        </div>
+        
         <ProductSection3 />
       </div>
     </main>
