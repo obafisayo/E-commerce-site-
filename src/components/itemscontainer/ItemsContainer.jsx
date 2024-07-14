@@ -11,7 +11,6 @@ const ItemsContainer = ({config, categoryconfig, category, button, button1, prod
     if (containerRef.current) {
       containerRef.current.scrollLeft -= 280;
     }
-    console.log("scrolleft")
   }
   
   const handleScrollRight = () => {
@@ -79,6 +78,7 @@ const ItemsContainer = ({config, categoryconfig, category, button, button1, prod
               <div className={`inline-flex gap-4 ${scrollingdiv? "" : "sm:flex-wrap"}`}>
                 {config.map((data, index) => (
                   <Productsbox key={index}
+                    id={data.id}
                     discount={data.discount}
                     image={data.image}
                     name={data.name}
