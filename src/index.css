@@ -8,3 +8,27 @@
     duration-300 rounded-md group-hover:border
     group-hover:border-gray-500 pl-4 pr-10 py-2 focus:outline-none
 }
+.products-container {
+    @apply overflow-x-scroll whitespace-nowrap scroll-smooth
+}
+::-webkit-scrollbar {
+    height: 0;
+    /* background: #000; */
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #dad1d1;
+    /* border-radius: 5px; */
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray;
+    /* border-radius: 2px; */
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #DB4444;
+}

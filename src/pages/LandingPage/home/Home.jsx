@@ -1,15 +1,21 @@
 import React from 'react'
-import Herosection from './herosection/Herosection';
-import NextHero from '../../../components/NextHero/NextHero';
+import Herosection from './herosection/Herosection'
+import ProductSection1 from './productsection1/ProductSection1'
+import ProductSection2 from './productsection1/productsection2'
+import ProductSection3 from './productsection1/productsection3'
+import Categories from './categories/Categories'
+import NextHero from '../../../components/NextHero/NextHero'
 
 const Home = () => {
-  return (
+  return(
     <main>
-      <div className="container"> 
+    <div>
         <Herosection />
-        <div className="bg-black h-[400px] text-white font-semibold">
-          <NextHero />
-        </div>
+        <ProductSection1 />
+        <Categories />
+        <ProductSection2 />
+        <NextHero />
+        <ProductSection3 />
       </div>
     </main>
     )

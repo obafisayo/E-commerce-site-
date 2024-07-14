@@ -1,7 +1,7 @@
-import Image0 from "../../../../assets/category/iphone.png"
-import Image1 from "../../../../assets/category/gaming.png"
-import Image2 from "../../../../assets/category/macbook.png"
-import Image3 from "../../../../assets/category/vr.png"
+import Image0 from "../../../../assets/static/iphone.png"
+import Image1 from "../../../../assets/static/gaming.png"
+import Image2 from "../../../../assets/static/macbook.png"
+import Image3 from "../../../../assets/static/vr.png"
 import { BsApple } from "react-icons/bs";
 import { BsPlaystation } from "react-icons/bs";
 import { PiVirtualRealityFill } from "react-icons/pi";
