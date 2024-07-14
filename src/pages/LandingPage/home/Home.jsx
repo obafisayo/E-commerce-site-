@@ -4,7 +4,8 @@ import ProductSection1 from './productsection1/ProductSection1'
 import ProductSection2 from './productsection1/productsection2'
 import ProductSection3 from './productsection1/productsection3'
 import Categories from './categories/Categories'
-import NextHero from '../../../components/NextHero/NextHero'
+import NextHero from '../../../components/NextHero/NextHero';
+import Featured from '../../../components/Featured/Featured'
 
 const Home = () => {
   return(
@@ -17,8 +18,8 @@ const Home = () => {
         <div className='container'>
         <NextHero />
         </div>
-        
         <ProductSection3 />
+        <Featured />
       </div>
     </main>
     )
