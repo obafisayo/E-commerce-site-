@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo1 from '../../img/mp3.png';
+import Logo1 from '../../../../assets/img/mp3.png';
 
 const NextHero = () => {
   return (
