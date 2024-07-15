@@ -1,14 +1,14 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
-import Footer from "./footer/Footer";
-import Header from "./header/Header";
-import Topheader from './topheader/Topheader';
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import Topheader from '../../components/topheader/Topheader';
 
 function LandingPageLayout() {
     return (
         <div>
             <Topheader />
-            <Header />
+            <Header wishNcart />
             <main>
                 <Outlet />
             </main>

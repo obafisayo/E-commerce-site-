@@ -8,7 +8,7 @@ import { PRODUCTS } from '../../../routes/RouteConstants';
 const Productsbox = ({id, image, discount, name, price, slashprice, rating}) => {
   return (
     <div className="h-[350px] w-[270px]">
-      <NavLink to={`/${PRODUCTS}/${id}`}>
+      <NavLink to={`${PRODUCTS}/${id}`}>
         <div className="bg-secondary h-3/4 flex justify-center items-center relative">
           <div className="p-10">
             <img src={image} alt="product-img"/>
