@@ -1,12 +1,28 @@
 import React from 'react'
+import Herosection from './herosection/Herosection'
+import ProductSection1 from './productsection1/ProductSection1'
+import ProductSection2 from './productsection1/productsection2'
+import ProductSection3 from './productsection1/productsection3'
+import Categories from './categories/Categories'
+import NextHero from '../../../components/NextHero/NextHero';
+import Featured from '../../../components/Featured/Featured'
 
 const Home = () => {
-  return (
-    <div className="bg-fuchsia-400 h-[400px] flex items-center
-        text-center text-white font-semibold">
-        <h1 className="text-xl">This is the Home page</h1>
-    </div>
-  )
+  return(
+    <main>
+    <div>
+        <Herosection />
+        <ProductSection1 />
+        <Categories />
+        <ProductSection2 />
+        <div className='container'>
+        <NextHero />
+        </div>
+        <ProductSection3 />
+        <Featured />
+      </div>
+    </main>
+    )
 }
 
 export default Home
