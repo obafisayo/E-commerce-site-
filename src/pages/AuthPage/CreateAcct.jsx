@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Card from '../AuthPage/Card/Card';
 
 const CreateAcct = () => {
   return (
-    <div>CreateAcct</div>
+    <section>
+    <Card />
+  </section>
   )
 }
 

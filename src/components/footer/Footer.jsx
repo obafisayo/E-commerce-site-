@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaTelegram } from 'react-icons/fa';
+import Qrcode from '../../assets/img/QRcode.webp';
+import Appstore from '../../assets/img/Appstore.png';
 
 const Footer = () => {
   return (
@@ -41,11 +43,11 @@ const Footer = () => {
           <div className='flex flex-col gap-3'>
             <h3 className="font-semibold">Download App</h3>
             <p className='font-thin text-sm'>Save $3 with new user only</p>
-            <div>
-              <img src='' alt='Appear' className='mb-2' />
-              <div className='flex gap-2'>
-                <img src='' alt='Google Play' />
-                <img src='' alt='Google Play' />
+            <div className='flex flex-row gap-2'>
+              <img src={ Qrcode } alt='Appear' className='mb-2 size-20' />
+              <div className='flex flex-col items-center gap-2'>
+                <img src={Appstore} alt='Google Play' />
+                <img src={Appstore} alt='Google Play' />
               </div>
             </div>
           </div>
