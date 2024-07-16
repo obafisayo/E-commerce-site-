@@ -33,6 +33,8 @@ import Faq from "../pages/LandingPage/faq/Faq.jsx";
 import Terms from "../pages/LandingPage/terms/Terms.jsx";
 import Privacy from "../pages/LandingPage/privacy/Privacy.jsx";
 import Security from "../pages/LandingPage/security/Security.jsx";
+import { productsconfig } from "../pages/LandingPage/home/productsection1/config.js";
+import ProductDetails from "../components/productdetails/ProductDetails.jsx";
 
 export default function Router() {
     function FindIdConfigDetails({ config }) {
@@ -40,11 +42,14 @@ export default function Router() {
         const [data, setData] = useState(null);
     
         useEffect(() => {
-            const foundItem = config.find((item) => item.id === id);
-            setData(foundItem)
+            const foundItem = config.find((item) => item.id.toString() === id);
+            if (foundItem) {
+            setData(foundItem);
+            } else {
+            setData(null);
+            }
         }, [id, config]);
-        console.log(data);
-        // return <ProposalDetails config={data} />;
+        return <ProductDetails data={data}/>;
     }
     return useRoutes([
         {
@@ -81,7 +86,7 @@ export default function Router() {
                 },
                 {
                     path: `${PRODUCTS}/:id`,
-                    element: <FindIdConfigDetails />
+                    element: <FindIdConfigDetails config={productsconfig}/>
                 }
             ]
         },
