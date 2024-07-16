@@ -3,6 +3,7 @@ import { CiHeart } from 'react-icons/ci'
 import { IoEyeOutline } from "react-icons/io5";
 import { NavLink } from 'react-router-dom';
 import { PRODUCTS } from '../../../routes/RouteConstants';
+import Ratings from '../ratings/Ratings';
 
 
 const Productsbox = ({id, image, discount, name, price, slashprice, rating}) => {
@@ -31,16 +32,7 @@ const Productsbox = ({id, image, discount, name, price, slashprice, rating}) => 
               <h3 className="text-brandRed">{`$${price}`}</h3>
               <h3 className="line-through">{`$${slashprice}`}</h3>
             </div>
-            <div className="flex gap-2">
-              <div className="flex items-center">
-                <span className="text-yellow-400 text-xl">★</span>
-                <span className="text-yellow-400 text-xl">★</span>
-                <span className="text-yellow-400 text-xl">★</span>
-                <span className="text-yellow-400 text-xl">★</span>
-                <span className="text-yellow-400 text-xl">★</span>
-              </div>
-              <h3>({rating*20})</h3>
-            </div>
+            <Ratings rating={rating} />
           </div>
         </div>
       </NavLink>
