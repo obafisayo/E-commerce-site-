@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import CardLogin from './CardLogin/CardLogin';
 
 const Signin = () => {
   return (
-    <div>Signin</div>
+    <section>
+        <CardLogin />
+    </section>
   )
 }
 
