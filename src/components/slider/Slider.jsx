@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Slider from "react-slick";
 import { GoArrowRight } from "react-icons/go";
-import { NavLink } from 'react-router-dom';
+import ShopButton from '../shared/shopbutton/ShopButton';
 // import { FiAlignRight } from "react-icons/fi";
 // <FiAlignRight />
 
@@ -37,13 +37,7 @@ const ItemSlider = ({ config }) => {
                 </div>
                 <h1 className="text-xl sm:text-4xl lg:text-5xl font-medium">{data.title}</h1>
                 <div className="flex items-center justify-center gap-2">
-                    <div className="relative">
-                        <NavLink to={"/#"}>
-                            Shop Now
-                        </NavLink>
-                        <span className="absolute left-0 bottom-0 w-full h-[1px] bg-white"
-                        />
-                    </div>
+                    <ShopButton />
                     <GoArrowRight size={24} />
                 </div>
             </div>

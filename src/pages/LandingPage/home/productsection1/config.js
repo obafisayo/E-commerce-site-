@@ -8,7 +8,7 @@ import image7 from "../../../../assets/static/watch.png"
 import image8 from "../../../../assets/static/earphone.png"
 export const productsconfig = [
     {
-        id:1,
+        id: `HAVIT-HV-G92-Wristwatch`,
         name: "HAVIT HV-G92 Wristwatch",
         price: 120,
         slashprice: 160,
