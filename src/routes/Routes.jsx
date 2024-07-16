@@ -19,7 +19,7 @@ import {
     TERMS,
 } from "./RouteConstants";
 
-// Pages import
+// Pages imp
 import Home from "../pages/LandingPage/home/Home.jsx";
 import NotFound404 from "../pages/LandingPage/NotFound.jsx";
 import LandingPageLayout from "../Layout/LandingPageLayout/LandingPageLayout";
