@@ -4,6 +4,12 @@ const Breadcrumb = () => {
   const location = useLocation();
   const pathParts = location.pathname.split('/').filter(part => part !== '');
 
+  if (pathParts[0] !== 'account') {
+    pathParts.unshift('Home');
+  } else {
+    pathParts.unshift('My account')
+  }
+
   return (
     <div className="mt-20">
       {pathParts.map((part, index) => (

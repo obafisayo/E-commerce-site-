@@ -1,6 +1,6 @@
 import React from 'react'
 import ItemsContainer from '../../../../components/itemscontainer/ItemsContainer';
-import { productsconfig } from './config';
+import { productsconfig } from '../../../../config/config';
 import Productsbox from '../../../../components/shared/productsbox/Productsbox';
 
 const ProductSection2 = () => {

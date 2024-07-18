@@ -5,6 +5,8 @@ import { Navigate, useParams, useRoutes } from "react-router-dom";
 import { 
     ABOUT,
     ACCOUNT,
+    CART,
+    CHECKOUT,
     CONTACT,
     FAQS,
     FORGOT_PASSWORD,
@@ -17,6 +19,7 @@ import {
     SIGNUP,
     SIGNUP_OTP,
     TERMS,
+    WISHLIST,
 } from "./RouteConstants";
 
 // Pages import
@@ -33,8 +36,13 @@ import Faq from "../pages/LandingPage/faq/Faq.jsx";
 import Terms from "../pages/LandingPage/terms/Terms.jsx";
 import Privacy from "../pages/LandingPage/privacy/Privacy.jsx";
 import Security from "../pages/LandingPage/security/Security.jsx";
-import { productsconfig } from "../pages/LandingPage/home/productsection1/config.js";
+import { productsconfig } from "../config/config.js";
 import ProductDetails from "../components/productdetails/ProductDetails.jsx";
+import { relatedconfig } from "../config/relatedconfig.js";
+import Wishlist from "../pages/LandingPage/wishlist/Wishlist.jsx";
+import Cart from "../pages/LandingPage/cart/Cart.jsx";
+import Checkout from "../pages/LandingPage/checkout/Checkout.jsx";
+import Account from "../pages/LandingPage/account/Account.jsx";
 
 export default function Router() {
     function FindIdConfigDetails({ config }) {
@@ -49,7 +57,7 @@ export default function Router() {
             setData(null);
             }
         }, [id, config]);
-        return <ProductDetails data={data}/>;
+        return <ProductDetails data={data} relatedproductsconfig={relatedconfig}/>;
     }
     return useRoutes([
         {
@@ -73,6 +81,18 @@ export default function Router() {
                     element: <Faq />
                 },
                 {
+                    path: WISHLIST,
+                    element: <Wishlist />
+                },
+                {
+                    path: CART,
+                    element: <Cart />
+                },
+                {
+                    path: CHECKOUT,
+                    element: <Checkout />
+                },
+                {
                     path: TERMS,
                     element: <Terms />
                 },
@@ -83,6 +103,10 @@ export default function Router() {
                 {
                     path: SECURITY,
                     element: <Security />
+                },
+                {
+                    path: ACCOUNT,
+                    element: <Account />
                 },
                 {
                     path: `${PRODUCTS}/:id`,
