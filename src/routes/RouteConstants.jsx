@@ -3,6 +3,9 @@ export const HOME = "/";
 export const ABOUT = "/about";
 export const CONTACT = "/contact-us";
 export const FAQS = '/faq';
+export const WISHLIST = '/wishlist';
+export const CART = '/cart';
+export const CHECKOUT = '/checkout';
 
 // product page routes
 export const PRODUCTS = "/products";
