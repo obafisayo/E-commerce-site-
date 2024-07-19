@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import NotFound from "../../pages/LandingPage/NotFound";
 import Breadcrumb from "../breadcrumb/Breadcrumb";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -18,6 +18,7 @@ const ProductDetails = ({ data, relatedproductsconfig }) => {
     const [selectedSize, setSelectedSize] = useState("");
     const [isClicked, setIsClicked] = useState([false, true]);
     const [itemCount, setItemCount] = useState(1);
+    const [effect, setEffect] = useState(true);
 
     const handleColorChange = (color) => {
         setSelectedColor(color);
@@ -27,20 +28,39 @@ const ProductDetails = ({ data, relatedproductsconfig }) => {
         setSelectedSize(size);
     };
 
-    const { addItemToCart } = useContext(CartContext);  
+    const { addItemToCart, cartItemsArray, incrementItemCount, decrementItemCount } = useContext(CartContext);
+
     const handleItemCountChange = (operation) => {
+        const cartItem = cartItemsArray && data && cartItemsArray.find((item) => item.id === data.id);
         if (operation === "increment") {
-            setItemCount(itemCount + 1);
-            setIsClicked([false, true])
+        cartItem && incrementItemCount(cartItem);
+        setItemCount(cartItem ? cartItem.count : itemCount + 1);
+        setIsClicked([false, true]);
         } else if (operation === "decrement" && itemCount > 1) {
-            setItemCount(itemCount - 1);
-            setIsClicked([true, false])
+        cartItem && decrementItemCount(cartItem);
+        setItemCount(cartItem ? cartItem.count : itemCount - 1);
+        setIsClicked([true, false]);
         }
     };
 
+    useEffect(() => {
+        const cartItem = cartItemsArray && data && cartItemsArray.find((item) => item.id === data.id);
+        if (effect) {
+            setItemCount(cartItem ? cartItem.count : itemCount);
+        }
+
+        if (cartItem && cartItem.count !== itemCount) {
+            setEffect(true);
+        } else {
+            setEffect(false);
+        }
+    }, [cartItemsArray, data, itemCount, effect]);
+
     const handleAddToCart = () => {
         const item = { ...data, color: selectedColor, size: selectedSize, count: itemCount };
-        addItemToCart(item, itemCount);
+        if (!cartItemsArray.find((item) => item.id === data.id)) {
+            addItemToCart(item, itemCount);
+        }
     };
 
     const { wishItemsArray } = useContext(WishContext);

@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import Breadcrumb from '../../../components/breadcrumb/Breadcrumb';
 import PrimaryButton from '../../../components/shared/primarybutton/PrimaryButton';
-import { HOME } from '../../../routes/RouteConstants';
+import { CHECKOUT, HOME } from '../../../routes/RouteConstants';
 import { RxCaretDown } from "react-icons/rx";
 import { RxCaretUp } from "react-icons/rx";
 import { IoClose } from 'react-icons/io5';
 import { CartContext } from '../../../contexts/cartcontext';
 
 const Cart = () => {
-  const { cartItemsArray, removeItemFromCart, decrementItemCount, incrementItemCount, cartTotal } = useContext(CartContext);
+  const { cartItemsArray, setCartItemsArray, removeItemFromCart, decrementItemCount, incrementItemCount, cartTotal } = useContext(CartContext);
 
   const handleItemCountChange = (id, operation) => {
     if (operation === "increment") {
@@ -21,6 +21,10 @@ const Cart = () => {
   const handleRemoveFromCart = (id) => {
     removeItemFromCart(cartItemsArray.find(item => item.id === id));
   };
+
+  const handleClick = () => {
+    setCartItemsArray([])
+  }
 
   const Details = ({ item }) => {
     return (
@@ -63,7 +67,7 @@ const Cart = () => {
           <div className="container">
             <div className="flex flex-col gap-16">
               <div className="flex flex-col gap-8">
-                <div className="flex py-6 px-12 shadow-md font-semibold">
+                <div className="flex py-6 px-12 max-md:px-6 shadow-md font-semibold">
                   {["Product", "Price", "Quantity", "Subtotal"].map((item, index) => (
                     <div key={index} className={`w-1/4 flex items-center 
                       ${index === 0? "": index === 3? "justify-end": "justify-center"}`}>
@@ -83,25 +87,26 @@ const Cart = () => {
                     to={HOME}
                   />
                   <PrimaryButton
-                    text={"Update Cart"}
+                    text={"Clear Cart"}
                     border={"border-2 font-medium"}
                     bgColor={"bg-transparent"}
                     textColor={"text-black"}
-                    to={HOME}
+                    handler={handleClick}
                   />
                 </div>
               </div>
-              <div className="flex justify-between max-md:flex-col max-md:gap-5">
-                <div className="flex gap-4 h-14">
+              <div className="flex justify-between max-md:flex-col max-md:gap-20">
+                <div className="flex gap-4 h-14 max-md:flex-col">
                   <input type="text" name="coupon" id="coupon"
                     placeholder="Coupon Code"
                     className="border-2 px-6 py-3 rounded-md border-black/50"
                   />
-                  <PrimaryButton bgColor={"bg-brandRed"}
-                    text={"Apply Coupon"}
-                    textColor={'text-white'}
-                    to={"/#"}
-                  />
+                  <div className="w-fit flex">
+                    <PrimaryButton bgColor={"bg-brandRed"}
+                      text={"Apply Coupon"}
+                      textColor={'text-white'}
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-col border-2 border-black rounded-md w-[470px] max-md:w-full py-7 px-5">
                   <h1 className="font-semibold text-xl mb-6">Cart Total</h1>
@@ -123,7 +128,7 @@ const Cart = () => {
                     <PrimaryButton bgColor={"bg-brandRed"}
                       text={"Proceed to checkout"}
                       textColor={'text-white'}
-                      to={"/#"}
+                      to={CHECKOUT}
                     />
                   </div>
                 </div>

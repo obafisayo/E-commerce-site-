@@ -3,10 +3,17 @@ import ItemsContainer from '../../../components/itemscontainer/ItemsContainer'
 import { relatedconfig } from '../../../config/relatedconfig'
 import Productsbox from '../../../components/shared/productsbox/Productsbox'
 import { WishContext } from '../../../contexts/wishcontext'
+import { CartContext } from '../../../contexts/cartcontext'
+import { CART } from '../../../routes/RouteConstants'
 
 const Wishlist = () => {
-  const { wishItemsArray, noOfWishItems } = useContext(WishContext);
+  const { wishItemsArray, setWishItemsArray, noOfWishItems } = useContext(WishContext);
+  const { addArrayToCart } = useContext(CartContext);
 
+  const handleClick = () => {
+    addArrayToCart(wishItemsArray)
+    setWishItemsArray([])
+  }
   return (
     <main>
       <div className="container">
@@ -15,6 +22,8 @@ const Wishlist = () => {
             <ItemsContainer
               subtitle={`Wishlist (${noOfWishItems})`}
               button2={"Move All To Bag"}
+              button2to={CART}
+              button2handler={handleClick}
             >
               {wishItemsArray && Array.isArray(wishItemsArray) && (
                 <div className={`inline-flex gap-4 sm:flex-wrap`}>

@@ -23,6 +23,7 @@ const WishContextProvider = ({ children }) => {
 
   const value = {
     wishItemsArray,
+    setWishItemsArray,
     addItemToWishList,
     removeItemFromWishList,
     noOfWishItems,
