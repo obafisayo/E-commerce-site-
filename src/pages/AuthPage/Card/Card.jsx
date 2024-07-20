@@ -24,10 +24,12 @@ const Card = () => {
         <input type="text" placeholder="Name" className="w-full border-b-2 mb-2 pb-2 border-gray-300 focus:border-[#DB4444] focus:outline-none py-2 px-4" />
         <input type="email" placeholder="Email or Phone Number" className="w-full border-b-2 border-gray-300 focus:border-[#DB4444] focus:outline-none py-2 px-4 my-4" />
         <input type="password" placeholder="Password" className="w-full border-b-2 pb-2 border-gray-300 focus:border-[#DB4444] focus:outline-none py-2 px-4" />
-        <button className="bg-[#DB4444] text-white font-semibold text-sm rounded-sm px-[118px] py-3 my-12 hover:py-4 transiton ease-in 1s">Create Account</button>
-        <div className=" flex flex-row item-center justify-center gap-2 border-2 text-black font-semibold text-sm rounded-sm w-[335px] py-3 my-12 hover:py-4 transiton ease-in 1s">
+        <button className="bg-[#DB4444] text-white font-semibold text-sm rounded-sm px-[118px] py-3 my-12 transition-transform ease-in duration-500 transform hover:scale-105">Create Account</button>
+
+        <div className=" flex flex-row item-center justify-center gap-2 border-2 text-black font-semibold text-sm rounded-sm w-[335px] py-3 my-12 transition-transform ease-in duration-1000 transform hover:scale-105">
             <img src={Google} alt='' />
             <span>Sign up with Google</span>
+
         </div>
         <p className='pl-12'>Already have an account? <span onClick={handleLoginClick} style={{cursor: 'pointer', color: 'blue'}}>Log In</span></p>
     </form>
