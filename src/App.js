@@ -1,12 +1,18 @@
 import './App.css';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
+import CartContextProvider from './contexts/cartcontext';
+import WishContextProvider from './contexts/wishcontext';
 import Router from './routes/Routes';
 
 function App() {
   return (
     <>
-      <Router />
-      <ScrollToTop />
+      <WishContextProvider>
+        <CartContextProvider>
+          <Router />
+          <ScrollToTop />
+        </CartContextProvider>
+      </WishContextProvider>
     </>
   );
 }
